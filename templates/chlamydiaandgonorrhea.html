@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name ="keywords" content ="HTML 5, CSS 3, JavaScript, jquery, Angularjs"/>
+<meta name ="description" content ="Dynamic web development">
+<meta name = "author" content ="lawrence">
+<meta name = "viewport" content ="width=device-width,initial-scale=1.0">
+<title>validation form</title>
+<link rel ="stylesheet" href ="font-awesome/css/font-awesome.min.css">
+<script src ="../scripts/validatepersonalinfo.js"></script>
+<link rel ="stylesheet" type ="text/css" href ="../css/main.css">
+<style>
+    span{
+    color :red;
+    }
+
+    body{
+            background-color:white;
+    }
+
+    input{
+        width:10%;
+        padding: 12px;
+        margin: 8px;
+        border: none;
+        border-top: 3px solid blue;
+        border-bottom: 3px solid red;
+        background-color: green;
+        color: black;
+        text-align: center;
+
+    }
+
+    h1{
+        color:blueviolet;
+        text-align: center;
+    }
+h2{
+    color:red;
+    text-align: center;
+}
+
+label{
+    color:aqua;
+    
+}
+
+p{
+    color:brown;
+    
+}
+
+footer{
+    color:red;
+    text-align: center;
+}
+
+header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 30px 10%;
+        }
+ 
+        .navigate_links {
+            list-style: none;
+        }
+ 
+        .navigate_links li {
+            display: inline-block;
+            padding: 10px 20px;
+        }
+ 
+        .navigate_links li a {
+            transition: all 0.3s ease-in-out 0s;
+        }
+ 
+        /* Add some transition to make navigation
+           bar attractive */
+        .navigate_links li a:hover {
+            color: greenyellow;
+            border: 2px solid blue;
+            box-shadow: 3px 3px 3px red, 3px 3px 3px blue;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 12px;
+        }
+
+        a{
+	text-decoration: none;
+}
+
+</style>
+
+    
+</head>
+<body>
+    <header>
+    
+        <nav>
+            <ul class="navigate_links">
+                <ul class="navigate_links">
+                    <li><a href ="congenitalsyphilis.html">Next</a></li>
+                  </ul>   
+                
+              </ul>   
+    </nav>
+    </header>   
+    <article class="col-9">
+    <h1>Reporting Form for Chlamydia and Gonorrhea</h1>
+    <h2>Clinic Information</h2>
+    <form method = "post" name ="personalinfo" onsubmit="return validatepersonalinfo();" autocomplete="off"> 
+    <label for ="date"> Date</label>
+    <input type ="date" name ="date" id ="date"/><span id ="dateErr"></span>
+    <label for ="Person Completing Form">Person Completing Form:</label>
+    <input id ="Person Completing Form" name ="Person Completing Form" type ="text"/><span id ="personcompletingformErr"></span><br/><br/>
+    <label for ="Health Provider">Health Provider:</label>
+    <input id ="Health Provider" name ="Health Provider" type ="text"/><span id ="healthproviderErr"></span>
+    <label for ="tel">Contact phone number/fax:</label>
+    <input type = "tel" name ="tel" id ="tel"/><span id ="Contactphonenumber/faxErr"></span><br/><br/>
+    <h3>Patient Information — Please complete all information requested below</h3>
+    <label for ="name">1.Name:</label>
+    <input id ="name" onblur ="return validatepersonalinfoname();" name ="name" type ="text"/><span id ="nameErr"></span>
+    <label for ="dob">Date of Birth:</label>
+    <input type ="date" id ="dob" name ="dob"><span id ="dateofbirthErr"></span>
+    <label>gender:</label>
+    <input type ="radio" name ="Gender" value ="female" id ="Female">
+    <label for ="Female">Female</label>
+    <input type ="radio" name ="Gender" value ="Male" id ="Male">
+    <label for ="Male">Male</label>
+    <input type ="radio" name ="Gender" value ="other" id ="other">
+    <label for ="other">other</label><span id ="genderErr"></span><br/><br/>
+    <label for ="address">2.Address:</label>
+    <input id ="address" name ="address" type ="text"/>
+    <label for ="street city/state zip">street city/state zip:</label>
+    <input id ="street city/state zip" name ="street city/state zip" type ="text"/><br/>
+    <label for ="tel">phone number:</label>
+    <input type = "tel" name ="tel" id ="tel"/>
+    <label for ="ALTERNATIVE #"> ALTERNATIVE #:</label>
+    <input id ="ALTERNATIVE #" name ="ALTERNATIVE #" type ="text"/><br/>
+    <label>3.PREGNANCY TEST RESULTS:</label><br/>
+    <input type ="radio" name ="PREGNANCY TEST RESULTS" value ="N/A" id ="N/A">
+    <label for ="N/A">N/A</label>
+    <input type ="radio" name ="PREGNANCY TEST RESULTS" value =" Negative" id =" Negative">
+    <label for =" Negative"> Negative</label>
+    <input type ="radio" name ="PREGNANCY TEST RESULTS" value ="Unknown" id ="Unknown">
+    <label for ="Unknown">Unknown</label>
+    <input type ="radio" name ="PREGNANCY TEST RESULTS" value ="Positive: If positive how many weeks?" id ="Positive: If positive how many weeks?">
+    <label for ="Positive: If positive how many weeks?">Positive: If positive how many weeks?</label><br/>
+    <label>4.ETHNICITY:</label><br/>
+    <input type ="radio" name ="ETHNICITY" value ="Hispanic" id ="Hispanic">
+    <label for =" Hispanic"> Hispanic</label>
+    <input type ="radio" name ="ETHNICITY" value ="Non-Hispanic" id ="Non-Hispanic">
+    <label for ="Non-Hispanic">Non-Hispanic</label>
+    <input type ="radio" name ="ETHNICITY" value ="Unknown" id ="Unknown">
+    <label for ="Unknown">Unknown</label><span id ="EthnicityErr"></span><br/><br/>
+    <label>Race:</label><br/>
+    <input type ="radio" name ="race" value ="American Indian/Alaskan Native" id ="American Indian/Alaskan Native">
+    <label for ="American Indian/Alaskan Native">American Indian/Alaskan Native</label>
+    <input type ="radio" name ="race" value ="Native Hawaiian/Pacific Islander" id ="Native Hawaiian/Pacific Islander">
+    <label for ="Native Hawaiian/Pacific Islander">Native Hawaiian/Pacific Islander</label>
+    <input type ="radio" name ="race" value ="Asian" id ="Asian">
+    <label for ="Asian">Asian</label> 
+    <input type ="radio" name ="race" value ="White" id ="White">
+    <label for ="White">White</label>
+    <input type ="radio" name ="race" value ="Black/African Am." id ="Black/African Am.">
+    <label for ="Black/African Am.">Black/African Am.</label>
+    <input type ="radio" name ="race" value ="Unk" id ="Unk">
+    <label for ="Unk">Unk</label>
+    <input type ="radio" name ="race" value ="Other" id ="Other">
+    <label for ="Other">Other</label><span id ="raceErr"></span><br/><br/>
+    <label>Gender for sex partner </label>
+    <input type ="radio" name ="Gender for sex partner " value ="male" id ="male">
+    <label for ="male">male</label><br/>
+    <input type ="radio" name ="Gender for sex partner " value ="female" id ="female">
+    <label for ="female">female</label><br/>
+    <input type ="radio" name ="Gender for sex partner " value =" Both" id =" Both">
+    <label for =" Both">Both</label><br/>
+    <input type ="radio" name ="Gender for sex partner " value ="unknown" id ="unknown">
+    <label for ="unknown">unknown</label><span id ="GenderforsexErr"></span><br/><br/>
+    <label>5.TEST RESULT TYPE:</label><br/>
+    <input type ="radio" name ="TEST RESULT TYPE:" value ="Chlamydia Positive Result" id ="Chlamydia Positive Result">
+    <label for ="Chlamydia Positive Result">Chlamydia Positive Result</label><br/>
+    <label for ="date"> Date</label>
+    <input type ="date" name ="date" id ="date"/>
+    <input type ="radio" name ="TEST RESULT TYPE:" value ="Gonorrhea Positive Result " id ="Gonorrhea Positive Result ">
+    <label for ="Gonorrhea Positive Result ">Gonorrhea Positive Result </label><span id ="GonorrheapositiveresultErr"></span>
+    <label for ="date"> Date</label>
+    <input type ="date" name ="date" id ="date"/><br/>
+    <label>PREVIOUS HIV TESTING:</label>
+    <input type ="radio" name ="PREVIOUS HIV TESTING" value ="yes " id ="yes ">
+    <label for ="yes ">yes </label>
+    <input type ="radio" name ="PREVIOUS HIV TESTING" value ="no " id ="no ">
+    <label for ="no ">no </label>
+    <input type ="radio" name ="PREVIOUS HIV TESTING" value =" Unknown" id =" Unknown ">
+    <label for =" Unknown "> Unknown </label><br/>
+    <label>If yes, last result was?</label>
+    <input type ="radio" name ="If yes, last result was?" value ="pos" id =" pos ">
+    <label for =" pos "> pos </label>
+    <input type ="radio" name ="If yes, last result was?" value ="NEG" id =" NEG ">
+    <label for =" NEG "> NEG </label>
+    <input type ="radio" name ="If yes, last result was?" value =" Unknown" id =" Unknown ">
+    <label for =" Unknown "> Unknown </label><br/>
+    <label for ="month"> month of last test</label>
+    <input type ="month" name ="month" id ="month"/>
+    <label for ="year"> year of last test</label>
+    <input type ="year" name ="year" id ="year"/><br/>
+    <label>6 REASON FOR EXAM:</label><br/>
+    <input type ="radio" name ="REASON FOR EXAM" value ="Symptomatic" id ="Symptomatic ">
+    <label for =" Symptomatic "> Symptomatic </label><br/>
+    <input type ="radio" name ="REASON FOR EXAM" value =" Routine Exam " id ="  Routine Exam  ">
+    <label for ="  Routine Exam  ">  Routine Exam  </label><br/>
+    <input type ="radio" name ="REASON FOR EXAM" value ="Test for Cure" id ="Test for Cure ">
+    <label for =" Test for Cure "> Test for Cure </label><br/>
+    <input type ="radio" name ="REASON FOR EXAM" value =" Exposed to Infection " id =" Exposed to Infection  ">
+    <label for ="  Exposed to Infection  ">  Exposed to Infection  </label><br/>
+    <input type ="radio" name ="REASON FOR EXAM" value ="Pregnant" id ="Pregnant ">
+    <label for =" Pregnant "> Pregnant </label><span id ="reasonforexamErr"></span><br/><br/>
+    <label>DIAGNOSIS:</label><br/>
+    <input type ="radio" name ="DIAGNOSIS" value ="Asymptomatic" id ="Asymptomatic ">
+    <label for =" Asymptomatic "> Asymptomatic </label><br/>
+    <input type ="radio" name ="DIAGNOSIS" value ="Symptomatic-Uncomplicated " id ="Symptomatic-Uncomplicated  ">
+    <label for =" Symptomatic-Uncomplicated  "> Symptomatic-Uncomplicated  </label><br/>
+    <input type ="radio" name ="DIAGNOSIS" value ="Pelvic Inflammatory Disease (PID) " id ="Pelvic Inflammatory Disease (PID)  ">
+    <label for =" Pelvic Inflammatory Disease (PID)  "> Pelvic Inflammatory Disease (PID)  </label><br/>
+    <input type ="radio" name ="DIAGNOSIS" value ="Ophthalmia /conjunctivitis" id ="Ophthalmia /conjunctivitis ">
+    <label for =" Ophthalmia /conjunctivitis "> Ophthalmia /conjunctivitis </label><br/>
+    <input type ="radio" name ="DIAGNOSIS" value ="Disseminated" id ="Disseminated ">
+    <label for =" Disseminated "> Disseminated </label><span id ="DiagnosisErr"></span><br/><br/>
+    <label>SITE(S):</label><br/>
+    <input type ="radio" name ="SITE(S)" value ="Cervix" id ="Cervix">
+    <label for ="Cervix"> Cervix </label><br/>
+    <input type ="radio" name ="SITE(S)" value =" Vaginal" id =" Vaginal ">
+    <label for ="  Vaginal ">  Vaginal </label><br/>
+    <input type ="radio" name ="SITE(S)" value ="Urethra" id ="Urethra ">
+    <label for =" Urethra "> Urethra </label><br/>
+    <input type ="radio" name ="SITE(S)" value ="Symptomatic" id ="Symptomatic ">
+    <label for =" Symptomatic "> Rectum </label><br/>
+    <input type ="radio" name ="SITE(S)" value ="Rectum" id ="Rectum ">
+    <label for =" Rectum "> Rectum </label><br/>
+    <input type ="radio" name ="SITE(S)" value =" Ocular" id =" Ocular">
+    <label for =" Ocular">  Ocular </label><br/>
+    <input type ="radio" name ="SITE(S)" value ="Urine" id ="Urine">
+    <label for ="Urine"> Urine </label><br/>
+    <input type ="radio" name ="SITE(S)" value ="Pharynx " id ="Pharynx ">
+    <label for ="Pharynx "> Pharynx  </label><br/>
+    <input type ="radio" name ="SITE(S)" value ="other" id ="other">
+    <label for ="other"> other </label><span id ="site(s)Err"></span><br/><br/>
+    <label>7.GONORRHEA TREATMENT PLAN:</label><br/>
+    <input type ="radio" name ="GONORRHEA TREATMENT PLAN:" value ="Rocephin/Ceftriaxone 250mg IM x 1." id ="Rocephin/Ceftriaxone 250mg IM x 1.">
+    <label for ="Rocephin/Ceftriaxone 250mg IM x 1."> Rocephin/Ceftriaxone 250mg IM x 1. </label><br/>
+    <label for ="date"> Date</label>
+    <input type ="date" name ="date" id ="date"/><br/>
+    <p>PLUS</p><br/>
+    <input type ="radio" name ="GONORRHEA TREATMENT PLAN" value ="Azithromycin 1gm orally in a single dose." id ="Azithromycin 1gm orally in a single dose.">
+    <label for ="Azithromycin 1gm orally in a single dose."> Azithromycin 1gm orally in a single dose. </label><br/>
+    <input type ="radio" name ="GONORRHEA TREATMENT PLAN" value ="Azithromycin 1gm orally in a single dose." id ="Azithromycin 1gm orally in a single dose.">
+    <label for ="Azithromycin 1gm orally in a single dose."> Azithromycin 1gm orally in a single dose.</label><br/>
+    <label for ="date"> Date</label>
+    <input type ="date" name ="date" id ="date"/><br/>
+    <label>CHLAMYDIA TREATMENT PLAN:</label><br/>
+    <p>OR</p><br/>
+    <input type ="radio" name ="CHLAMYDIA TREATMENT PLAN" value ="Doxycycline 100mg BID x 7 days." id ="Doxycycline 100mg BID x 7 days.">
+    <label for ="Doxycycline 100mg BID x 7 days."> Doxycycline 100mg BID x 7 days. </label><br/>
+    <label for ="date"> Date</label>
+    <input type ="date" name ="date" id ="date"/><br/>
+    <p>(contraindicated during pregnancy)</p>
+    <label>Alternative Treatment Regimens Alternative Treatment Regimens</label>
+    <input type ="radio" name ="Alternative Treatment Regimens Alternative Treatment Regimens" value ="Cefixime 400mg orally in a single dose" id ="Cefixime 400mg orally in a single dose">
+    <label for ="Cefixime 400mg orally in a single dose"> Cefixime 400mg orally in a single dose </label><br/>
+    <label for ="date"> Date</label>
+    <input type ="date" name ="date" id ="date"/><br/>
+    <label>plus</label>
+    <input type ="radio" name ="plus" value =" Azithromycin 1 gm orally in a single dose" id =" Azithromycin 1 gm orally in a single dose">
+    <label for =" Azithromycin 1 gm orally in a single dose">  Azithromycin 1 gm orally in a single dose </label><br/>
+    <input type ="radio" name ="plus" value =" Amoxicillin 500mg orally tid X 7 days" id =" Amoxicillin 500mg orally tid X 7 days">
+    <label for =" Amoxicillin 500mg orally tid X 7 days"> Amoxicillin 500mg orally tid X 7 days</label><br/>
+    <label for ="date"> Date</label>
+    <input type ="date" name ="date" id ="date"/><br/>
+    <input type ="radio" name ="Other Treatment" value ="Other Treatment" id ="Other Treatment">
+    <label for ="Other Treatment"> Other Treatment </label><br/>
+    <label for ="date"> Date</label>
+    <input type ="date" name ="date" id ="date"/><br/>
+    <p>(test of cure recommended at 1 month)</p>
+    <input type ="radio" name ="Other Treatment" value ="Other Treatment" id ="Other Treatment">
+    <label for ="Other Treatment"> Other Treatment </label><br/>
+    <label for ="date"> Date</label>
+    <input type ="date" name ="date" id ="date"/><br/>
+    <label> 8. IF NOT TREATED YET — PATIENT NOTIFIED OF INFECTION:</label>
+    <input type ="radio" name ="IF NOT TREATED YET — PATIENT NOTIFIED OF INFECTION:" value ="yes" id ="yes">
+    <label for ="yes">yes </label><br/>
+    <input type ="radio" name ="IF NOT TREATED YET — PATIENT NOTIFIED OF INFECTION:" value ="NO" id ="no">
+    <label for ="no">no </label><br/>
+    <p>9. PARTNER MANAGEMENT PLAN — Ensuring Partner Treatment</p>
+    <label>Expedited Partner Therapy dispensed at time of visit?</label>
+    <input type ="radio" name ="Expedited Partner Therapy dispensed at time of visit?" value ="no" id ="no">
+    <label for ="no"> no </label><br/>
+    <input type ="radio" name ="Expedited Partner Therapy dispensed at time of visit?" value ="other" id ="other">
+    <label for ="yes"> yes </label><br/>
+    <label for ="How many partners?">How many partners?:</label>
+    <input id ="How many partners?" name ="How many partners?" type ="text"/><br/>
+    
+    
+    
+
+
+
+
+</form>
+</body>
+<footer>
+    Copyright@GRIMARD CATHOLIC HOSPITAL ANYIGBA  
+</footer>
+</html>
+
+    
+
+
+
